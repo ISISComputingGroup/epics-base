@@ -1349,10 +1349,11 @@ iocsh (const char *pathname)
         // Best practice is that all applications call the process-wide SetErrorMode function
         // with a parameter of SEM_FAILCRITICALERRORS at startup. This is to prevent
         // error mode dialogs from hanging the application.
+#ifndef _MINGW
         UINT error_mode = GetErrorMode();
         error_mode |= SEM_FAILCRITICALERRORS;
         SetErrorMode(error_mode);
-
+#endif /* ndef _MINGW */
         if (setvbuf(stderr, NULL, _IONBF, BUFSIZ) != 0)
         {
             fprintf(stderr, "iocsh: error setting stderr buffering\n");
