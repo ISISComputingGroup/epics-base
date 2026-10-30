@@ -325,7 +325,7 @@ static void errlogCallFunc(const iocshArgBuf *args)
 /* errlogSev */
 static const iocshArg errlogSevArg0 = { "severity",iocshArgInt};
 static const iocshArg errlogSevArg1 = { "message",iocshArgString};
-static const iocshArg * const errlogSevArgs[] = 
+static const iocshArg * const errlogSevArgs[] =
     {&errlogSevArg0, &errlogSevArg1};
 static const iocshFuncDef errlogSevFuncDef = {"errlogSev",2,errlogSevArgs};
 static void errlogSevCallFunc(const iocshArgBuf *args)

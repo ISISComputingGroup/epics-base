@@ -1391,7 +1391,7 @@ iocsh (const char *pathname)
             switch(iocsh_showwin[0])
             {
                 case 'M': // minimise
-                case 'm': 
+                case 'm':
                     ShowWindowAsync(conwin, SW_MINIMIZE);
                     break;
 
@@ -1406,7 +1406,7 @@ iocsh (const char *pathname)
         }
         // disable quick edit mode, can cause ioc window to freeze if user clicks in it by mistake
         DWORD mode;
-        HANDLE hStdin = GetStdHandle(STD_INPUT_HANDLE); 
+        HANDLE hStdin = GetStdHandle(STD_INPUT_HANDLE);
         if (hStdin != INVALID_HANDLE_VALUE)
         {
             if (GetConsoleMode(hStdin, &mode) != 0)

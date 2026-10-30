@@ -635,15 +635,14 @@ void epicsStdCall caStartRepeaterIfNotInstalled ( unsigned repeaterPort )
          * the 2nd repeater exits when unable to attach to the
          * repeater's port)
          */
-         
 
-        /* 
-         * look for a caRepeater in the same directory as CA.DLL 
+        /*
+         * look for a caRepeater in the same directory as CA.DLL
          * and use this if present instead of a PATH search
          */
         char carep_path[256];
         strcpy(carep_path, "caRepeater");
-#ifdef _WIN32       
+#ifdef _WIN32
         char caDLLPath[MAX_PATH];
         HMODULE hmod = GetModuleHandle("CA.DLL");
         if (hmod != NULL) {
@@ -659,8 +658,6 @@ void epicsStdCall caStartRepeaterIfNotInstalled ( unsigned repeaterPort )
            }
         }
 #endif /* _WIN32 */
-         
-         
         osiSpawnDetachedProcessReturn osptr =
             osiSpawnDetachedProcess ( "!CA Repeater", carep_path );
         if ( osptr != osiSpawnDetachedProcessSuccess ) {
