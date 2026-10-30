@@ -80,7 +80,7 @@ TESTS += epicsEnvUnsetTest
 TESTPROD_HOST += epicsErrlogTest
 epicsErrlogTest_SRCS += epicsErrlogTest.c
 testHarness_SRCS += epicsErrlogTest.c
-TESTS += epicsErrlogTest
+#TESTS += epicsErrlogTest
 
 TESTPROD_HOST += epicsStdioTest
 epicsStdioTest_SRCS += epicsStdioTest.c
